@@ -349,7 +349,8 @@ function X2JS(config) {
 	function jsonXmlSpecialElem ( jsonObj, jsonObjField ) {
 		if((config.arrayAccessForm=="property" && endsWith(jsonObjField.toString(),("_asArray"))) 
 				|| jsonObjField.toString().indexOf(config.attributePrefix)==0 
-				|| jsonObjField.toString().indexOf("__")==0
+				//|| jsonObjField.toString().indexOf("__")==0
+				|| (['__cdata','__prefix','__text'].indexOf(jsonObjField.toString()) != -1)
 				|| (jsonObj[jsonObjField] instanceof Function) )
 			return true;
 		else
@@ -372,7 +373,7 @@ function X2JS(config) {
 		var attrList = [];
 		if(jsonObj instanceof Object ) {
 			for( var ait in jsonObj  ) {
-				if(ait.toString().indexOf("__")== -1 && ait.toString().indexOf(config.attributePrefix)==0) {
+				if (/*ait.toString().indexOf("__")== -1 */ (['__cdata','__prefix','__text'].indexOf(ait.toString()) == -1) && ait.toString().indexOf(config.attributePrefix)==0) {
 					attrList.push(ait);
 				}
 			}
