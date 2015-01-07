@@ -577,3 +577,5 @@ function X2JS(config) {
 	};
 	
 }
+
+exports.X2JS = X2JS;
