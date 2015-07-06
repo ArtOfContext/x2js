@@ -1,0 +1,11 @@
+{
+  "name": "x2js",
+  "version": "0.0.0",
+  "description": "x2js - clone of epeleg/x2js",
+  "main": "xml2json.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/ArtOfContext/x2js.git"
+  },
+  "license": "Apache Licence v2"
+}
